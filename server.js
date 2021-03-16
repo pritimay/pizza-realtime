@@ -8,6 +8,9 @@ const expressLayout = require('express-ejs-layouts');
 
 const PORT = process.env.PORT || 4000; 
 
+//Setting assets folder in node js
+app.use(express.static('public'));
+
 app.get("/", (request,response)=>{
 
     //response.send("Hello froms server");
