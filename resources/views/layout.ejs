@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Real Time Pizza App</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="./public/favicon.ico"/>
+        <link rel="stylesheet" href="/css/app.css">
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <nav class="container mx-auto flex items-center justify-between py-4">
+            <div class="ml-6">
+                <img src="/img/logo.png" alt="logo">
+            </div>
+
+            <div>
+                <ul class="flex items-center">
+                    <li class="ml-10"><a href="#">Menu</a></li>
+                    <li class="ml-10"><a href="#">Offers</a></li>
+                    <li class="ml-10"><a href="#">Register</a></li>
+                    <li class="ml-10"><a href="#">Login</a></li>
+                    <li class="ml-10"><a href="#" class="inline-block mr-4 px-2 py-2 rounded-full"><img src="/img/cart.png"></a></li>
+                </ul>
+            </div>
+
+        </nav>
+    <%- body %>
+
+    <footer></footer>
+        <script src="/js/app.js">  </script>
+    </body>
+</html>

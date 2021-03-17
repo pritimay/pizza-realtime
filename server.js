@@ -11,14 +11,7 @@ const PORT = process.env.PORT || 4000;
 //Setting assets folder in node js
 app.use(express.static('public'));
 
-app.get("/", (request,response)=>{
 
-    //response.send("Hello froms server");
-   // response.render('Hello from server by pritimaya');
-
-   response.render('home');
-
-});
 
 
 ///setting the template engine
@@ -28,7 +21,20 @@ app.set('views',path.join(__dirname,'/resources/views'))
 
 app.set('view engine','ejs');
 
+app.get("/", (request,response)=>{
 
+    //response.send("Hello froms server");
+   // response.render('Hello from server by pritimaya');
+
+   response.render('home');
+
+});
+
+app.get("/cart",(request,response)=>{
+
+response.render('customers/cart');
+
+});
 
 app.listen(PORT,()=>{
     console.log("listening to port for pritimaya "+ PORT)
