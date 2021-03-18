@@ -44,3 +44,10 @@ section.hero {
 .btn-primary:hover {
   background: #b23301;
 }
+
+section.cart {
+  background: #F8F8F8;
+}
+section.cart .total-amount {
+  color: #FE5F1E;
+}
