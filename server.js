@@ -36,6 +36,18 @@ response.render('customers/cart');
 
 });
 
+app.get("/login",(request,response)=>{
+
+    response.render('auth/login');
+    
+    });
+
+    app.get("/register",(request,response)=>{
+
+        response.render('auth/register');
+        
+        });
+
 app.listen(PORT,()=>{
     console.log("listening to port for pritimaya "+ PORT)
 });
