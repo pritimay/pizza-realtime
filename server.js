@@ -32,7 +32,7 @@ var sessionDbStore = new MongoDbStore({
   });
 app.use(require('express-session')({
     secret: process.env.COOKIE_SECRET,
-    cookie: { maxAge: 1000 * 60 * 60 * 2},
+    cookie: { maxAge: 1000 * 60 * 60 * 24},
     store: sessionDbStore,
     resave: false,
     saveUninitialized: false,
@@ -44,6 +44,16 @@ app.use(flash());
 
 //Setting assets folder in node js
 app.use(express.static('public'));
+
+//setting express json for request body
+
+app.use(express.json())
+
+// gloabal variables avaialable
+app.use((request, response, next)=>{
+    response.locals.session = request.session;
+    next();
+});
 
 ///setting the template engine
 app.use(expressLayout);

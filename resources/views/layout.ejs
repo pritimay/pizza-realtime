@@ -32,7 +32,9 @@
                     <li class="ml-10"><a href="#">Offers</a></li>
                     <li class="ml-10"><a href="/register">Register</a></li>
                     <li class="ml-10"><a href="/login">Login</a></li>
-                    <li class="ml-10"><a href="/cart" class="inline-block mr-4 px-2 py-2 rounded-full"><img src="/img/cart.png"></a></li>
+                    <li class="ml-10"><a href="/cart" class="inline-block mr-4 px-2 py-2 rounded-full flex items-center">
+                        <span id="cart-counter" class="font-bold text-white pr-2"><%= session.cart ? session.cart.totalQty : '' %>0</span>
+                        <img src="/img/cart.png"></a></li>
                 </ul>
             </div>
 

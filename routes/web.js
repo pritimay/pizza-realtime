@@ -15,6 +15,8 @@ function initRoutes(app) {
     
     app.get("/", (homeController().index));
 
+    app.post("/update-cart", cartController().update);
+
 
 }
 
