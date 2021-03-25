@@ -1855,6 +1855,21 @@ var cartCounter = document.querySelector('#cart-counter'); //we can use fetch ap
 function updateCart(pizza) {
   axios__WEBPACK_IMPORTED_MODULE_0___default().post('/update-cart', pizza).then(function (res) {
     cartCounter.innerText = res.data.totalQty;
+    new (noty__WEBPACK_IMPORTED_MODULE_1___default())({
+      type: 'success',
+      timeout: 1000,
+      text: 'Item added to cart',
+      progressBar: false,
+      layout: 'topLeft'
+    }).show();
+  })["catch"](function (err) {
+    new (noty__WEBPACK_IMPORTED_MODULE_1___default())({
+      type: 'error',
+      timeout: 1000,
+      text: 'something went wrong',
+      progressBar: false,
+      layout: 'topLeft'
+    }).show();
   });
 }
 
