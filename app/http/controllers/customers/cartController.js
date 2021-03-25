@@ -37,11 +37,15 @@ function cartController() {
                     item: request.body
                 }
                 cart.totalQty = cart.totalQty + 1
-                cart.totalPrice = cart.totalPrice + request.body.price;
+                cart.totalPrice = Number(cart.totalPrice) + Number(request.body.price);
+                console.log("total price by calculation" + cart.totalPrice)
             } else {
                 cart.items[request.body._id].qty = cart.items[request.body._id].qty + 1;
                 cart.totalQty = cart.totalQty + 1
-                cart.items[request.body._id].totalPrice = cart.items[request.body._id].totalPrice + request.body.price;
+                
+                cart.items[request.body._id].totalPrice = Number(cart.items[request.body._id].totalPrice) + Number(request.body.price);
+
+                console.log("total price by calculation" + cart.items[request.body._id].totalPrice)
             }
             
             response.json({ totalQty: request.session.cart.totalQty });
