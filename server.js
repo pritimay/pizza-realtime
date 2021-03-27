@@ -13,6 +13,8 @@ const expressLayout = require('express-ejs-layouts');
 
 const mongoose = require('mongoose');
 
+const passport = require('passport')
+
 const flash = require('express-flash')
 //express session for storing the session cart variables
 const session = require('express-session');
@@ -49,6 +51,10 @@ app.use(express.static('public'));
 
 app.use(express.json())
 
+//setting express to accept URL encoded data
+ 
+app.use(express.urlencoded({extended : false}));
+
 // gloabal variables avaialable
 app.use((request, response, next)=>{
     response.locals.session = request.session;
@@ -79,7 +85,11 @@ connection.once('open', () =>{
     console.log("error occured while connection")
 });
 
-
+//Passport config
+const passportInit = require('./app/config/passport')
+passportInit(passport);
+app.use(passport.initialize());
+app.use(passport.session())
 //session config for stroing cart
 
 

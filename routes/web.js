@@ -12,6 +12,8 @@ function initRoutes(app) {
     app.get("/login", authController().login);
 
     app.get("/register", authController().register);
+
+    app.post("/register", authController().postRegister)
     
     app.get("/", (homeController().index));
 
