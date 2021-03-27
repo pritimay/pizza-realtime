@@ -6,18 +6,23 @@ const cartController = require('../app/http/controllers/customers/cartController
 
 function initRoutes(app) {
 
-    
     app.get("/cart",cartController().cart);
 
     app.get("/login", authController().login);
+    
+    app.post("/login", authController().postlogin);
 
     app.get("/register", authController().register);
 
     app.post("/register", authController().postRegister)
     
+    app.post("/update-cart", cartController().update);
+
     app.get("/", (homeController().index));
 
-    app.post("/update-cart", cartController().update);
+    
+
+    
 
 
 }
